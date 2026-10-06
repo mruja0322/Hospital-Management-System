@@ -478,7 +478,7 @@ tbody td{padding:12px 15px;font-size:.85rem;color:var(--txt)}
         </div>
         <div class="fg">
           <label>Username / Patient ID</label>
-          <div class="iw"><i class="fas fa-user"></i><input type="text" id="l-user" placeholder="e.g. admin@hospital.com" onkeydown="if(event.key==='Enter')doLogin()"/></div>
+          <div class="iw"><i class="fas fa-user"></i><input type="text" id="l-user" placeholder="e.g. admin@demo.invalid" onkeydown="if(event.key==='Enter')doLogin()"/></div>
         </div>
         <div class="fg">
           <label>Password</label>
@@ -742,7 +742,7 @@ tbody td{padding:12px 15px;font-size:.85rem;color:var(--txt)}
     </div>
     <div class="mb">
       <div class="fr">
-        <div class="fld"><label>Full Name *</label><input type="text" id="d-nm" placeholder="Dr. Priya Sharma"/></div>
+        <div class="fld"><label>Full Name *</label><input type="text" id="d-nm" placeholder="Dr. Demo Doctor"/></div>
         <div class="fld"><label>Staff ID</label><input type="text" id="d-id" placeholder="auto-generated"/></div>
       </div>
       <div class="fr">
@@ -1120,20 +1120,20 @@ const TODAY = new Date().toISOString().split('T')[0];
 
 const DATA = {
   doctors: [
-    {id:'D01',name:'Dr. Priya Sharma', spec:'Cardiology',    qual:'MBBS,MD',   exp:12,fee:800, status:'Active',   phone:'+91-9800001111',email:'priya@hosp.in', patients:24,avail:['Mon','Wed','Fri'],       slots:['09:00','09:30','10:00','11:00','14:00']},
-    {id:'D02',name:'Dr. Arun Mehta',   spec:'Neurology',     qual:'MBBS,DM',   exp:8, fee:700, status:'Active',   phone:'+91-9800002222',email:'arun@hosp.in',  patients:18,avail:['Tue','Thu','Sat'],       slots:['10:00','10:30','11:30','15:00']},
-    {id:'D03',name:'Dr. Sneha Patel',  spec:'Pediatrics',    qual:'MBBS,DCH',  exp:6, fee:500, status:'Active',   phone:'+91-9800003333',email:'sneha@hosp.in', patients:31,avail:['Mon','Tue','Wed','Thu'], slots:['09:00','10:00','11:00','14:30','16:00']},
-    {id:'D04',name:'Dr. Karan Singh',  spec:'Orthopedics',   qual:'MBBS,MS',   exp:15,fee:900, status:'On Leave', phone:'+91-9800004444',email:'karan@hosp.in', patients:12,avail:['Mon','Wed'],             slots:['10:00','14:00']},
-    {id:'D05',name:'Dr. Divya Reddy',  spec:'Dermatology',   qual:'MBBS,DVD',  exp:4, fee:600, status:'Active',   phone:'+91-9800005555',email:'divya@hosp.in', patients:22,avail:['Mon','Tue','Fri'],       slots:['09:30','10:30','11:30','15:30']},
-    {id:'D06',name:'Dr. Ravi Nair',    spec:'General Medicine',qual:'MBBS',    exp:10,fee:400, status:'Active',   phone:'+91-9800006666',email:'ravi@hosp.in',  patients:38,avail:['Mon','Tue','Wed','Thu','Fri'],slots:['09:00','09:30','10:00','11:00','11:30','14:00','15:00','16:00']},
+    {id:'D01',name:'Dr. Demo One',   spec:'Cardiology',    qual:'MBBS,MD',   exp:12,fee:800, status:'Active',   phone:'000-000-0001',email:'doctor01@example.invalid', patients:24,avail:['Mon','Wed','Fri'],       slots:['09:00','09:30','10:00','11:00','14:00']},
+    {id:'D02',name:'Dr. Demo Two',   spec:'Neurology',     qual:'MBBS,DM',   exp:8, fee:700, status:'Active',   phone:'000-000-0002',email:'doctor02@example.invalid', patients:18,avail:['Tue','Thu','Sat'],       slots:['10:00','10:30','11:30','15:00']},
+    {id:'D03',name:'Dr. Demo Three', spec:'Pediatrics',    qual:'MBBS,DCH',  exp:6, fee:500, status:'Active',   phone:'000-000-0003',email:'doctor03@example.invalid', patients:31,avail:['Mon','Tue','Wed','Thu'], slots:['09:00','10:00','11:00','14:30','16:00']},
+    {id:'D04',name:'Dr. Demo Four',  spec:'Orthopedics',   qual:'MBBS,MS',   exp:15,fee:900, status:'On Leave', phone:'000-000-0004',email:'doctor04@example.invalid', patients:12,avail:['Mon','Wed'],             slots:['10:00','14:00']},
+    {id:'D05',name:'Dr. Demo Five',  spec:'Dermatology',   qual:'MBBS,DVD',  exp:4, fee:600, status:'Active',   phone:'000-000-0005',email:'doctor05@example.invalid', patients:22,avail:['Mon','Tue','Fri'],       slots:['09:30','10:30','11:30','15:30']},
+    {id:'D06',name:'Dr. Demo Six',   spec:'General Medicine',qual:'MBBS',   exp:10,fee:400, status:'Active',   phone:'000-000-0006',email:'doctor06@example.invalid', patients:38,avail:['Mon','Tue','Wed','Thu','Fri'],slots:['09:00','09:30','10:00','11:00','11:30','14:00','15:00','16:00']},
   ],
   patients: [
-    {id:'PAT001',fname:'Rahul', lname:'Gupta',   age:34,gender:'Male',  blood:'B+', phone:'+91-9711111111',email:'rahul@gmail.com', doctor:'D01',type:'Inpatient', status:'admitted',  admit:TODAY,ward:'Ward A-102',diagnosis:'Chest pain, hypertension',password:'patient123'},
-    {id:'PAT002',fname:'Meena', lname:'Iyer',    age:62,gender:'Female',blood:'O+', phone:'+91-9722222222',email:'meena@gmail.com',  doctor:'D02',type:'Inpatient', status:'admitted',  admit:TODAY,ward:'Ward B-205',diagnosis:'Stroke recovery',        password:'patient123'},
-    {id:'PAT003',fname:'Arjun', lname:'Verma',   age:8, gender:'Male',  blood:'A+', phone:'+91-9733333333',email:'',               doctor:'D03',type:'Outpatient',status:'outpatient',admit:TODAY,ward:'-',         diagnosis:'Viral infection',        password:'patient123'},
-    {id:'PAT004',fname:'Sunita',lname:'Das',     age:45,gender:'Female',blood:'AB-',phone:'+91-9744444444',email:'sunita@yahoo.com',doctor:'D04',type:'Inpatient', status:'admitted',  admit:TODAY,ward:'Ward C-310',diagnosis:'Fractured femur',        password:'patient123'},
-    {id:'PAT005',fname:'Vikram',lname:'Bose',    age:27,gender:'Male',  blood:'O-', phone:'+91-9755555555',email:'vikram@gmail.com',doctor:'D05',type:'Outpatient',status:'outpatient',admit:TODAY,ward:'-',         diagnosis:'Eczema treatment',       password:'patient123'},
-    {id:'PAT006',fname:'Ananya',lname:'Krishnan',age:55,gender:'Female',blood:'A-', phone:'+91-9766666666',email:'ananya@gmail.com',doctor:'D06',type:'Inpatient', status:'discharged',admit:TODAY,ward:'-',         diagnosis:'Appendectomy',           password:'patient123'},
+    {id:'PAT001',fname:'Demo', lname:'Patient 001',age:34,gender:'Male',  blood:'B+', phone:'000-000-0001',email:'patient001@example.invalid',doctor:'D01',type:'Inpatient', status:'admitted',  admit:TODAY,ward:'Ward A-102',diagnosis:'Chest pain, hypertension',password:'demo-patient-only'},
+    {id:'PAT002',fname:'Demo', lname:'Patient 002',age:62,gender:'Female',blood:'O+', phone:'000-000-0002',email:'patient002@example.invalid',doctor:'D02',type:'Inpatient', status:'admitted',  admit:TODAY,ward:'Ward B-205',diagnosis:'Stroke recovery',        password:'demo-patient-only'},
+    {id:'PAT003',fname:'Demo', lname:'Patient 003',age:8, gender:'Male',  blood:'A+', phone:'000-000-0003',email:'patient003@example.invalid',doctor:'D03',type:'Outpatient',status:'outpatient',admit:TODAY,ward:'-',         diagnosis:'Viral infection',        password:'demo-patient-only'},
+    {id:'PAT004',fname:'Demo', lname:'Patient 004',age:45,gender:'Female',blood:'AB-',phone:'000-000-0004',email:'patient004@example.invalid',doctor:'D04',type:'Inpatient', status:'admitted',  admit:TODAY,ward:'Ward C-310',diagnosis:'Fractured femur',        password:'demo-patient-only'},
+    {id:'PAT005',fname:'Demo', lname:'Patient 005',age:27,gender:'Male',  blood:'O-', phone:'000-000-0005',email:'patient005@example.invalid',doctor:'D05',type:'Outpatient',status:'outpatient',admit:TODAY,ward:'-',         diagnosis:'Eczema treatment',       password:'demo-patient-only'},
+    {id:'PAT006',fname:'Demo', lname:'Patient 006',age:55,gender:'Female',blood:'A-', phone:'000-000-0006',email:'patient006@example.invalid',doctor:'D06',type:'Inpatient', status:'discharged',admit:TODAY,ward:'-',         diagnosis:'Appendectomy',           password:'demo-patient-only'},
   ],
   appointments: [
     {id:'APT001',patient:'PAT001',doctor:'D01',date:TODAY,time:'09:00',type:'Consultation',duration:30,status:'Confirmed',notes:''},
@@ -1171,12 +1171,12 @@ const DATA = {
     {id:4,name:'Maternity Ward',ward_type:'Maternity',floor:3,capacity:15,available_beds:6,occupied_beds:9,total_beds:15},
   ],
   beds: [
-    {bed_id:1,ward_id:1,ward_name:'General Ward',bed_number:'A-01',bed_type:'General',status:'occupied', patient_id:'PAT001',patient_name:'Rahul Gupta'},
+    {bed_id:1,ward_id:1,ward_name:'General Ward',bed_number:'A-01',bed_type:'General',status:'occupied', patient_id:'PAT001',patient_name:'Demo Patient 001'},
     {bed_id:2,ward_id:1,ward_name:'General Ward',bed_number:'A-02',bed_type:'General',status:'available',patient_id:null,patient_name:null},
     {bed_id:3,ward_id:1,ward_name:'General Ward',bed_number:'A-03',bed_type:'General',status:'available',patient_id:null,patient_name:null},
-    {bed_id:4,ward_id:2,ward_name:'ICU',         bed_number:'ICU-01',bed_type:'ICU',  status:'occupied', patient_id:'PAT002',patient_name:'Meena Iyer'},
+    {bed_id:4,ward_id:2,ward_name:'ICU',         bed_number:'ICU-01',bed_type:'ICU',  status:'occupied', patient_id:'PAT002',patient_name:'Demo Patient 002'},
     {bed_id:5,ward_id:2,ward_name:'ICU',         bed_number:'ICU-02',bed_type:'ICU',  status:'available',patient_id:null,patient_name:null},
-    {bed_id:6,ward_id:3,ward_name:'Pediatric Ward',bed_number:'P-01',bed_type:'General',status:'occupied',patient_id:'PAT003',patient_name:'Arjun Verma'},
+    {bed_id:6,ward_id:3,ward_name:'Pediatric Ward',bed_number:'P-01',bed_type:'General',status:'occupied', patient_id:'PAT003',patient_name:'Demo Patient 003'},
   ],
   medicineOrders: [
     {id:1, medicine:'Paracetamol 500mg', qty:200, priority:'Normal', supplier:'MedSupply Co.', notes:'Monthly restock', orderedBy:null, status:'Pending', created:TODAY},
@@ -1228,11 +1228,11 @@ const ROLES = {
 };
 
 const DEMO_USERS = {
-  admin:        {username:'admin@hospital.com',password:'admin123',  name:'Admin User',       role:'admin'},
-  doctor:       {username:'priya@hosp.in',     password:'doctor123', name:'Dr. Priya Sharma', role:'doctor',       doctorId:'D01'},
-  receptionist: {username:'rekha@hospital.com',password:'recep123',  name:'Rekha Rao',        role:'receptionist'},
-  nurse:        {username:'kavya@hospital.com',password:'nurse123',  name:'Nurse Kavya',      role:'nurse'},
-  patient:      {username:'PAT001',            password:'patient123',name:'Rahul Gupta',      role:'patient',      patientId:'PAT001'},
+  admin:        {username:'admin@demo.invalid',     password:'demo-admin-only',        name:'Demo Administrator', role:'admin'},
+  doctor:       {username:'doctor01@demo.invalid',  password:'demo-doctor-only',       name:'Dr. Demo One',       role:'doctor',       doctorId:'D01'},
+  receptionist: {username:'reception@demo.invalid', password:'demo-receptionist-only', name:'Demo Receptionist',  role:'receptionist'},
+  nurse:        {username:'nurse@demo.invalid',     password:'demo-nurse-only',        name:'Demo Nurse',         role:'nurse'},
+  patient:      {username:'PAT001',                 password:'demo-patient-only',      name:'Demo Patient 001',   role:'patient',      patientId:'PAT001'},
 };
 
 let CURRENT_ROLE = 'admin';
@@ -2567,7 +2567,7 @@ async function addPatient() {
     try{const r=await apiPost('/patients',payload);newId=r.patient_id;}
     catch(e){showToast('Save failed: '+e.message,'error');return;}
   }
-  DATA.patients.push({id:newId,fname:fn,lname:ln,age:payload.age,gender:payload.gender,blood:payload.blood_group,phone:payload.phone,email:payload.email,doctor:payload.assigned_doctor,type:payload.patient_type,ward:payload.ward,admit:payload.admission_date,diagnosis:payload.diagnosis,status:'admitted',password:'patient123'});
+  DATA.patients.push({id:newId,fname:fn,lname:ln,age:payload.age,gender:payload.gender,blood:payload.blood_group,phone:payload.phone,email:payload.email,doctor:payload.assigned_doctor,type:payload.patient_type,ward:payload.ward,admit:payload.admission_date,diagnosis:payload.diagnosis,status:'admitted',password:'demo-patient-only'});
   closeModal('modal-add-patient');navigateTo(CURRENT_PAGE);
   showToast(`${fn} ${ln} registered! ID: ${newId}`,'success');
 }
